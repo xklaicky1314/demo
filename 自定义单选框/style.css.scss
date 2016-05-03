@@ -1,0 +1,33 @@
+html { padding: 100px; background-color: #eee; }
+
+div {
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+div > input {
+  width: 23px;
+  height: 23px;
+  // visibility: hidden;
+  opacity: .5;
+}
+
+div > label {
+  position: absolute;
+  z-index: -1;
+  top: 3px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #6ee768;
+  cursor: pointer;
+}
+
+div > input[type = radio]:checked + label {
+  background-color: #fff !important;
+}

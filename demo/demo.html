@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css.scss">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="demo.css" />
+  <script src="jquery-2.2.3.min.js"></script>
+  <script src="js/style.js"></script>
+</head>
+<body>
+  <canvas id='ex1' width="500" height="150" style="border: 1px solid #cccccc;">
+    Hello World!!!
+  </canvas>
+
+
+
+
+  <script>
+    // 1. 等待页面DOM元素加载完毕。
+    window.onload = function() {
+        drawExamples();
+    }
+    function drawExamples(){
+        // 2. 获取canvas元素的引用。
+        var canvas  = document.getElementById("ex1");
+        // 3. 从canvas元素中获取一个2D上下文（context）。
+        var context = canvas.getContext("2d");
+        // 4. 从2D上下文中使用绘制函数绘制图形。
+        context.fillStyle = "#ff0000";
+        context.fillRect(10,10, 100,100);
+
+        context.strokeStyle = "#0000ff";
+        // context.lineWidth   = 5;
+        context.strokeRect(30,20, 120,110);
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

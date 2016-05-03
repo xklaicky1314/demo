@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS backface-visibility属性效果演示|3D立方体_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<style type="text/css">
+		.demo-container-2{
+		  width: 800px;
+		  max-width: 100%;
+		  height: 500px;
+		  position: relative;
+		  margin: 0 auto;
+		}
+		.cube-container {
+		  width: 200px;
+		  height: 200px;
+		  position: relative;
+		  margin: 80px;
+		  display: inline-block;
+		  -webkit-perspective: 800px;
+		     -moz-perspective: 800px;
+		       -o-perspective: 800px;
+		          perspective: 800px;
+		  -webkit-perspective-origin: 250% 250%;
+		  perspective-origin: -150% -150%;
+		}
+		.cube-container h5{
+		  font-size: 0.85em;
+		  text-transform: none;
+		  font-weight: 600;
+		  display: inline-block;
+		  margin-bottom: 3em;
+		}
+		.box {
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  -webkit-transform-style: preserve-3d;
+		     -moz-transform-style: preserve-3d;
+		       -o-transform-style: preserve-3d;
+		          transform-style: preserve-3d;
+		  -webkit-transition: -webkit-transform 1s;
+		     -moz-transition: -moz-transform 1s;
+		       -o-transition: -o-transform 1s;
+		          transition: transform 1s;
+		}
+
+		.box div {
+		  display: block;
+		  position: absolute;
+		  border: 1px solid #fff;
+		  line-height: 196px;
+		  font-size: 90px;
+		  text-align: center;
+		  font-weight: bold;
+		  color: white;
+		}
+
+		.box-2 div {
+		  -webkit-backface-visibility: hidden;
+		     -moz-backface-visibility: hidden;
+		       -o-backface-visibility: hidden;
+		          backface-visibility: hidden;
+		}
+
+		.box .front,
+		.box .back {
+		  width: 196px;
+		  height: 196px;
+		}
+
+		.box .right,
+		.box .left {
+		  width: 96px;
+		  height: 198px;
+		  left: 100px;
+		}
+		.box .right{
+		  left: 0;
+		}
+
+		.box .top,
+		.box .bottom {
+		  width: 196px;
+		  height: 98px;
+		  top: 50px;
+		  line-height: 96px;
+		}
+
+
+		.box .front  { background: hsla( 000, 100%, 50%, 0.7 ); }
+		.box .back   { background: hsla( 160, 100%, 50%, 0.7 ); }
+		.box .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
+		.box .left   { background: hsla( 180, 100%, 50%, 0.7 ); }
+		.box .top    { background: hsla( 240, 100%, 50%, 0.7 ); }
+		.box .bottom { background: hsla( 300, 100%, 50%, 0.7 ); }
+		.box .front  {
+		  -webkit-transform: rotateY( 0deg ) translateZ( 50px );
+		     -moz-transform: rotateY( 0deg ) translateZ( 50px );
+		       -o-transform: rotateY( 0deg ) translateZ( 50px );
+		          transform: rotateY( 0deg ) translateZ( 50px );
+		}
+		.box .back   {
+		  -webkit-transform: rotateX(180deg ) translateZ(  50px );
+		     -moz-transform: rotateX(180deg ) translateZ(  50px );
+		       -o-transform: rotateX(180deg ) translateZ(  50px );
+		          transform: rotateX(180deg ) translateZ(  50px );
+		}
+		.box .right {
+		  -webkit-transform: rotateY(   90deg ) translateZ( 150px );
+		     -moz-transform: rotateY(   90deg ) translateZ( 150px );
+		       -o-transform: rotateY(   90deg ) translateZ( 150px );
+		          transform: rotateY(   90deg ) translateZ( 150px );
+		}
+		.box .left {
+		  -webkit-transform: rotateY(  -90deg ) translateZ( 150px );
+		     -moz-transform: rotateY(  -90deg ) translateZ( 150px );
+		       -o-transform: rotateY(  -90deg ) translateZ( 150px );
+		          transform: rotateY(  -90deg ) translateZ( 150px );
+		}
+		.box .top {
+		  -webkit-transform: rotateX(   90deg ) translateZ( 100px );
+		     -moz-transform: rotateX(   90deg ) translateZ( 100px );
+		       -o-transform: rotateX(   90deg ) translateZ( 100px );
+		          transform: rotateX(   90deg ) translateZ( 100px );
+		}
+		.box .bottom {
+		  -webkit-transform: rotateX(  -90deg ) translateZ( 100px );
+		     -moz-transform: rotateX(  -90deg ) translateZ( 100px );
+		       -o-transform: rotateX(  -90deg ) translateZ( 100px );
+		          transform: rotateX(  -90deg ) translateZ( 100px );
+		}  
+	</style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>CSS backface-visibility属性效果演示|3D立方体</h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/201603253264.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+			<div class="htmleaf-demo center">
+			  <a href="index.html">卡片翻转</a>
+			  <a href="index2.html" class="current">3D立方体</a>
+			</div>
+		</header>
+		<div class="demo-container-2">
+                <div class="cube-container">
+                      <h5>backface-visibility: visible;</h5>
+                      <div class="box">
+                        <div class="front">1</div>
+                        <div class="back">2</div>
+                        <div class="right">3</div>
+                        <div class="left">4</div>
+                        <div class="top">5</div>
+                        <div class="bottom">6</div>
+                      </div>
+                </div>
+                <div class="cube-container">
+                      <h5>backface-visibility: hidden;</h5>
+                      <div class="box box-2">
+                        <div class="front">1</div>
+                        <div class="back">2</div>
+                        <div class="right">3</div>
+                        <div class="left">4</div>
+                        <div class="top">5</div>
+                        <div class="bottom">6</div>
+                      </div>
+                  </div>
+                </div>
+		
+	</div>
+</body>
+</html>

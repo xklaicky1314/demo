@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CSS backface-visibility属性效果演示|卡片翻转_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<style type="text/css">
+		.demo-container-1 {
+		  padding: 1em;
+		  margin: 50px auto;
+		  max-width: 700px;
+		  text-align: center;
+		  -webkit-perspective: 800px;
+		  perspective: 800px;
+		}
+		.card-container{
+		  display: inline-block;
+		  width: 45%;
+		}
+		.card-container h5{
+		  font-size: 0.85em;
+		  text-transform: none;
+		  font-weight: 600;
+		}
+		.card-1 {
+		  width: 180px;
+		  height: 252px;
+		  margin: 0 auto;
+		  border: 2px solid #e2e2e2;
+		  border-radius: 5px;
+		  position: relative;
+		  -webkit-transition: all .4s linear;
+		  transition: all .4s linear;
+		  -webkit-transform-style: preserve-3d;
+		  transform-style: preserve-3d;
+		}
+
+		.card-2 {
+		  width: 180px;
+		  height: 252px;
+		  margin: 0 auto;
+		  border: 2px solid #e2e2e2;
+		  border-radius: 5px;
+		  position: relative;
+		  -webkit-transition: all .4s linear;
+		  transition: all .4s linear;
+		  -webkit-transform-style: preserve-3d;
+		  transform-style: preserve-3d;
+		}
+
+		.face1 {
+		  position: absolute;
+		  width: 100%;
+		  height: 100%;
+		  text-align: center;
+		  line-height: 300px;
+		  color: white;
+		  -webkit-backface-visibility: hidden;
+		  backface-visibility: hidden;
+		}
+		.face2 {
+		  position: absolute;
+		  width: 100%;
+		  height: 100%;
+		  text-align: center;
+		  line-height: 300px;
+		  color: white;
+		  -webkit-backface-visibility: visible;
+		  backface-visibility: visible;
+		}
+
+		.front {
+		  background-color: #0099CC;
+		  background-image: url(img/hongtao-q.jpg);
+		  z-index: 2;
+		}
+
+		.back {
+		  z-index: 1;
+		  background:url(img/puke-back.jpg);
+		  -webkit-transform: rotateY(180deg);
+		  transform: rotateY(180deg);
+		}
+
+		.card-1:hover,.card-2:hover {
+		  -webkit-transform: rotateY(180deg);
+		  transform: rotateY(180deg);
+		} 
+	</style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<h1>CSS backface-visibility属性效果演示|卡片翻转</h1>
+			<div class="htmleaf-links">
+				<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.htmleaf.com/" title="jQuery之家" target="_blank"><span> jQuery之家</span></a>
+				<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/201603253264.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+			</div>
+			<div class="htmleaf-demo center">
+			  <a href="index.html" class="current">卡片翻转</a>
+			  <a href="index2.html">3D立方体</a>
+			</div>
+		</header>
+		<div class="demo-container-1">
+                <div class="card-container">
+                  <h5>backface-visibility: hidden;</h5>
+                    <div class="card-1">
+                      <div class="face1 front"></div>
+                      <div class="face1 back"></div>
+                  </div>
+                </div>
+                <div class="card-container">
+                  <h5>backface-visibility: visible;</h5>
+                  <div class="card-2">
+                      <div class="face2 front"></div>
+                      <div class="face2 back"></div>
+                  </div>
+                </div>
+            </div>
+		
+	</div>
+</body>
+</html>

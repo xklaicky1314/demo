@@ -1,0 +1,32 @@
+.btn_a {
+  margin: 200px;
+  position: relative;
+}
+
+a {
+  position: absolute;
+  display: inline-block;
+  width: 146px;
+  height: 58px;
+  line-height: 58px;
+  font-size: 16px;
+  text-align: center;
+  background-color: #67e667;
+  border: 1px solid #39e639;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+}
+a:active {top: 4px;}
+.btn_shadow {
+  position: absolute;
+  width: 147px;
+  height: 58px;
+  top: 4px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #0c0;
+  z-index: -1;
+}
+
+
